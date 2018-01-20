@@ -48,6 +48,33 @@ public class TicTacToe extends JFrame implements ActionListener {
         }
         counter++;
         clickedButton.setEnabled(false);
+        if (isWinner()) {
+            setAllButtonsDisabled();
+            JOptionPane.showMessageDialog(null, "Koniec gry!");
+        }
+    }
+
+    public boolean isWinner(int i, int j, int k) {
+        if (buttons.get(i).getText().equals(buttons.get(j).getText()) && buttons.get(j).getText().equals(buttons.get(k).getText()) && !buttons.get(k).getText().equals(""))
+            return true;
+        return false;
+    }
+
+    public boolean isWinner() {
+        if (isWinner(0, 1, 2)) return true;
+        if (isWinner(3, 4, 5)) return true;
+        if (isWinner(6, 7, 8)) return true;
+        if (isWinner(0, 3, 6)) return true;
+        if (isWinner(1, 4, 7)) return true;
+        if (isWinner(2, 5, 8)) return true;
+        if (isWinner(0, 4, 8)) return true;
+        if (isWinner(2, 4, 6)) return true;
+        return false;
+    }
+
+    public void setAllButtonsDisabled() {
+        for (JButton jButton : buttons)
+            jButton.setEnabled(false);
     }
 
 }
