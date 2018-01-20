@@ -39,10 +39,13 @@ public class TicTacToe extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton clickedButton = (JButton) e.getSource();
-        if (counter % 2 == 0)
+        if (counter % 2 == 0) {
             clickedButton.setText("X");
-        else
+            clickedButton.setBackground(Color.green);
+        } else {
             clickedButton.setText("O");
+            clickedButton.setBackground(Color.blue);
+        }
         counter++;
         clickedButton.setEnabled(false);
     }
