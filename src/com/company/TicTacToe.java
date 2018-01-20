@@ -27,15 +27,6 @@ public class TicTacToe extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new TicTacToe("Tic Tac Toe", 500);
-            }
-        });
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton clickedButton = (JButton) e.getSource();
@@ -77,5 +68,13 @@ public class TicTacToe extends JFrame implements ActionListener {
             jButton.setEnabled(false);
     }
 
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new TicTacToe("Tic Tac Toe", 500);
+            }
+        });
+    }
 }
 
